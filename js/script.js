@@ -19,7 +19,7 @@ let gridItems = document.querySelectorAll('.grid-item');
 
 gridItems.forEach(gridItem => {
     
-    gridItem.addEventListener('mousedown', () => {
+    gridItem.addEventListener('mouseover', () => {
         gridItem.style.backgroundColor = 'black';
     });
 });
