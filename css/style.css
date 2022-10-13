@@ -5,9 +5,15 @@ body {
 .grid-container {
     display: flex;
     flex-wrap: wrap;
-    height: 512px;
-    width: 512px;
+    height: 960px;
+    width: 960px;
     background-color: white;
+}
+
+#set {
+    height: 64px;
+    width: 256px;
+    margin: 8px;
 }
 
 /*.grid-item {
