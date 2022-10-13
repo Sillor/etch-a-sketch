@@ -2,6 +2,10 @@
     font-family: 'Lobster', cursive;
 }
 
+h1 {
+    font-size: 64px;
+}
+
 body {
     background-color: rgb(210, 210, 210);
 }
@@ -14,13 +18,8 @@ body {
     background-color: white;
 }
 
-#set {
-    height: 64px;
-    width: 256px;
-    margin: 8px;
-}
-
 /*.grid-item {
     width: 25%;
     height: 25%;
 }*/
+

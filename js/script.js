@@ -27,12 +27,10 @@ function setGrid(size) {
 
 setGrid(DEFAULT_SIZE);
 
+let slider = document.querySelector('#myRange');
+let sliderValue = document.querySelector('.slider-value');
 
-let setButton = document.querySelector('#set');
-setButton.addEventListener('click', () => {
-    let userInput;
-    do {
-        userInput = prompt('Grid size under 128:')
-    } while (userInput > 128);
-    setGrid(userInput);
-});
+slider.oninput = function() {
+    setGrid(this.value);
+    sliderValue.innerHTML = this.value;
+}

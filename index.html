@@ -10,11 +10,15 @@
     <title>Etch-A-Sketch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
 
 <body>
     <h1>Etch-A-Sketch</h1>
-    <button id="set">Set</button>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="128" value="16" class="slider" id="myRange">
+        <div class="slider-value">8</div>
+    </div>
     <div class="grid-container"></div>
 </body>
 
