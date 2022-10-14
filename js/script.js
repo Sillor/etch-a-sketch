@@ -1,6 +1,23 @@
-const DEFAULT_SIZE = 8;
+const DEFAULT_SIZE = 16;
 
 let grid = document.querySelector('.grid-container');
+let slider = document.querySelector('#myRange');
+let sliderValue = document.querySelector('.slider-value');
+let eraseButton = document.querySelector('#erase');
+let modeButton = document.querySelector('#mode');
+
+let mode = 'black';
+
+function rgbToHex(r, g, b) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function getRandomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return rgbToHex(r, g, b);
+}
 
 function resetGrid() {
     grid.textContent = '';
@@ -20,17 +37,32 @@ function setGrid(size) {
     let gridItems = document.querySelectorAll('.grid-item');
     gridItems.forEach(gridItem => {
         gridItem.addEventListener('mouseover', () => {
-            gridItem.style.backgroundColor = 'black';
+            if (mode === 'black') {
+                gridItem.style.backgroundColor = 'black';
+            }
+            else  {
+                gridItem.style.backgroundColor = `${getRandomColor()}`;
+            }
         });
     });
 }
 
 setGrid(DEFAULT_SIZE);
 
-let slider = document.querySelector('#myRange');
-let sliderValue = document.querySelector('.slider-value');
-
-slider.oninput = function() {
+slider.oninput = function () {
     setGrid(this.value);
     sliderValue.innerHTML = this.value;
+}
+
+eraseButton.onclick = function () { setGrid(slider.value); }
+
+modeButton.onclick = function () {
+    if (mode === 'black') {
+        mode = 'random';
+        modeButton.innerHTML = 'Mode: Random';
+    }
+    else {
+        mode = 'black';
+        modeButton.innerHTML = 'Mode: Black';
+    }
 }
