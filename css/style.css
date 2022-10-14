@@ -85,3 +85,7 @@ button {
 #myRange {
     width: 256px;
 }
+
+input {
+    accent-color: goldenrod;
+}
